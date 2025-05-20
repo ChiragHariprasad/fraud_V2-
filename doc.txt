@@ -1,0 +1,60 @@
+# Fraud Detection Dashboard - Project Structure and File Descriptions
+
+## Project Structure
+
+- `.gitignore`: Git ignored files.
+- `consumer.py`: Python script for consuming messages (likely from a queue or stream).
+- `producer.py`: Python script for producing messages.
+- `final_fraud_dataset.csv`: Main dataset used for fraud analysis.
+- `xgboost_classifier.joblib`: Pre-trained XGBoost model for fraud detection.
+- `index.html`: Main HTML entry point for the frontend.
+- `package.json`: Node.js project configuration and dependencies.
+- `vite.config.ts`: Vite build tool configuration.
+- `src/`: Source code for the frontend React application.
+  - `App.tsx`: Main React app component.
+  - `main.tsx`: Entry point for the React app.
+  - `index.css`: Global CSS styles.
+  - `components/`: Reusable React components.
+    - `Dashboard.tsx`: Dashboard UI.
+    - `FilterBar.tsx`: Filtering UI for transactions.
+    - `FraudAnalysis.tsx`: Fraud analysis visualizations.
+    - `Header.tsx`: App header.
+    - `TransactionCharts.tsx`: Charts for transaction data.
+    - `TransactionCounter.tsx`: Displays transaction counts.
+    - `TransactionList.tsx`: List of transactions.
+  - `contexts/`: React context providers.
+    - `SocketContext.tsx`: Provides WebSocket context for real-time updates.
+  - `server/`: Backend/server-related code.
+
+## How to Run
+
+1. **Install dependencies**  
+   ```sh
+   npm install
+   ```
+
+2. **Start the frontend**  
+   ```sh
+   npm run dev
+   ```
+
+3. **Run backend scripts**  
+   ```sh
+   python producer.py
+   python consumer.py
+   ```
+
+## Dataset
+
+- `final_fraud_dataset.csv`: Contains transaction records with fraud labels.
+- Columns include: User ID, User Type, Card Type, Amount, Date, Category, Payment Method, Locations, Device, and fraud indicators.
+
+## Model
+
+- `xgboost_classifier.joblib`: Machine learning model for predicting fraudulent transactions.
+
+## Additional Notes
+
+- Frontend uses React + TypeScript.
+- Styling is managed with Tailwind CSS.
+- Real-time updates may be handled via WebSockets.
